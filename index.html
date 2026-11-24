@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10172b">
+<title>EP Practicals — Physics Lab Companion</title>
+<style>
+:root{--bg:#0b1020;--panel:#121b31;--panel2:#17233d;--text:#edf3ff;--muted:#9eacc7;--line:rgba(190,210,255,.13);--a:#8ba7ff;--b:#7ce5d1;--glow:rgba(107,137,255,.2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#1c2a51 0,transparent 38%),radial-gradient(ellipse at 100% 12%,#183b49 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}.logo{height:38px;width:38px;border-radius:12px;background:linear-gradient(135deg,#8ba7ff,#7ce5d1);display:grid;place-items:center;color:#10172b;font-weight:900;font-size:17px;box-shadow:0 8px 24px var(--glow)}.nav-note{font-size:13px;color:var(--muted)}
+.hero{padding:70px 0 42px;max-width:760px}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(124,229,209,.25);background:rgba(124,229,209,.07);color:#a8f3e5;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;letter-spacing:.7px;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--b);box-shadow:0 0 12px var(--b)}h1{font-size:clamp(38px,6vw,66px);line-height:1.04;letter-spacing:-2.8px;margin:22px 0 16px}.gradient{background:linear-gradient(100deg,#a8bbff,#83ead8);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:17px;line-height:1.7;color:var(--muted);max-width:620px;margin:0}.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.stat{border:1px solid var(--line);background:rgba(255,255,255,.035);padding:10px 14px;border-radius:12px;color:var(--muted);font-size:13px}.stat strong{color:var(--text);font-size:16px;margin-right:5px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:22px 0 18px}.section-head h2{font-size:24px;margin:0;letter-spacing:-.6px}.section-head p{margin:7px 0 0;color:var(--muted);font-size:14px}
+.search{width:min(300px,100%);background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--text);outline:none;font:inherit}.search:focus{border-color:var(--a);box-shadow:0 0 0 3px var(--glow)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-bottom:58px}.card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(23,35,61,.96),rgba(16,25,44,.96));border:1px solid var(--line);border-radius:19px;padding:22px;transition:transform .2s,border-color .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);border-color:rgba(139,167,255,.4);box-shadow:0 18px 45px rgba(0,0,0,.2)}.card-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.num{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(139,167,255,.13);color:#b6c6ff;font-weight:800;font-size:13px}.tag{font-size:11px;color:#a8f3e5;background:rgba(124,229,209,.08);border:1px solid rgba(124,229,209,.15);padding:6px 9px;border-radius:999px;text-align:right}.card h3{font-size:20px;line-height:1.25;margin:18px 0 4px;letter-spacing:-.45px}.sub{color:var(--a);font-size:13px;font-weight:600}.desc{color:var(--muted);font-size:14px;line-height:1.55;min-height:44px;margin:14px 0}.formula{border:1px solid var(--line);background:rgba(4,10,22,.28);padding:11px 13px;border-radius:11px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;color:#dce6ff;overflow-wrap:anywhere}.result{font-size:12px;color:var(--muted);margin:9px 0 18px}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 13px;border-radius:10px;font-size:13px;font-weight:750;border:1px solid var(--line);transition:.2s}.btn.primary{background:linear-gradient(110deg,#8ba7ff,#7ce5d1);color:#0c1527;border:0}.btn.secondary{background:rgba(255,255,255,.045);color:var(--text)}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.empty{display:none;color:var(--muted);padding:28px;text-align:center;border:1px dashed var(--line);border-radius:16px}
+footer{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.footbrand{color:var(--text);font-weight:700}
+@media(max-width:700px){.hero{padding:48px 0 32px}h1{letter-spacing:-1.8px}.section-head{align-items:stretch;flex-direction:column}.search{width:100%}.grid{grid-template-columns:1fr}.card{padding:19px}.desc{min-height:0}.nav-note{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="brand" href="#"><span class="logo">EP</span><span>EP Practicals</span></a><span class="nav-note">Physics lab companion · Experiments & viva</span></nav>
+<header class="hero">
+<span class="eyebrow"><span class="dot"></span> Your practicals, organised</span>
+<h1>Understand the experiment.<br><span class="gradient">Own your viva.</span></h1>
+<p class="lead">A simple, student-friendly collection of experiment videos, key formulas and viva preparation PDFs — all in one place.</p>
+<div class="stats"><span class="stat"><strong>07</strong> experiments</span><span class="stat"><strong>06</strong> included PDFs</span><span class="stat"><strong>01</strong> Drive-linked PDF</span></div>
+</header>
+<section>
+<div class="section-head"><div><h2>Experiment library</h2><p>Choose an experiment to watch its demonstration or prepare viva questions.</p></div><input class="search" id="search" type="search" placeholder="Search experiments…"></div>
+<div class="grid" id="grid">
+
+<article class="card" data-search="wavelength of mercury green light plane diffraction grating diffraction • spectrometer">
+ <div class="card-top"><span class="num">01</span><span class="tag">Diffraction • Spectrometer</span></div>
+ <h3>Wavelength of Mercury Green Light</h3><div class="sub">Plane diffraction grating</div>
+ <p class="desc">Determine the wavelength of the prominent green line emitted by a mercury vapour lamp.</p>
+ <div class="formula">d sin θ = nλ</div>
+ <div class="result">≈ 546.1 nm</div>
+ <div class="actions"><a class="btn primary" href="https://youtu.be/N0lxwqANsd4?si=y9qeqMKnPtuVjAUv" target="_blank" rel="noopener noreferrer">▶ Watch video</a><a class="btn secondary" href="pdfs/Mercury_Green_Light_Diffraction_Grating_Viva_QA.pdf" target="_blank" rel="noopener noreferrer">↗ Open viva PDF</a></div>
+</article>
+<article class="card" data-search="frequency of ac mains electric vibrator and sonometer vibrations • resonance">
+ <div class="card-top"><span class="num">02</span><span class="tag">Vibrations • Resonance</span></div>
+ <h3>Frequency of AC Mains</h3><div class="sub">Electric vibrator and sonometer</div>
+ <p class="desc">Determine the frequency of AC mains using an electric vibrator and a sonometer wire.</p>
+ <div class="formula">f = (1 / 2l) √(T / μ)</div>
+ <div class="result">50 Hz (India)</div>
+ <div class="actions"><a class="btn primary" href="https://youtu.be/MBet3VwrXI4?si=WkBYwYxRK_1aiDBy" target="_blank" rel="noopener noreferrer">▶ Watch video</a><a class="btn secondary" href="pdfs/AC_Mains_Frequency_Viva_QA_Updated.pdf" target="_blank" rel="noopener noreferrer">↗ Open viva PDF</a></div>
+</article>
+<article class="card" data-search="specific rotation of cane sugar polarimeter optical activity • polarimetry">
+ <div class="card-top"><span class="num">03</span><span class="tag">Optical activity • Polarimetry</span></div>
+ <h3>Specific Rotation of Cane Sugar</h3><div class="sub">Polarimeter</div>
+ <p class="desc">Determine the specific rotation of a cane sugar (sucrose) solution using a polarimeter.</p>
+ <div class="formula">[α] = θ / (l c)</div>
+ <div class="result">Sucrose: about +66.5° (standard conditions)</div>
+ <div class="actions"><a class="btn primary" href="https://youtu.be/DT9VdIpj5sc?si=4VeQNttAgwk2CUou3" target="_blank" rel="noopener noreferrer">▶ Watch video</a><a class="btn secondary" href="pdfs/Cane_Sugar_Specific_Rotation_Polarimeter_Viva_QA.pdf" target="_blank" rel="noopener noreferrer">↗ Open viva PDF</a></div>
+</article>
+<article class="card" data-search="wavelength of he–ne laser transmission diffraction grating laser • diffraction">
+ <div class="card-top"><span class="num">04</span><span class="tag">Laser • Diffraction</span></div>
+ <h3>Wavelength of He–Ne Laser</h3><div class="sub">Transmission diffraction grating</div>
+ <p class="desc">Determine the wavelength of a red He–Ne laser using a transmission diffraction grating.</p>
+ <div class="formula">d sin θ = mλ</div>
+ <div class="result">≈ 632.8 nm</div>
+ <div class="actions"><a class="btn primary" href="https://youtu.be/ufpPxzbiRlU?si=QqVjqlvXv6Y9yXuF" target="_blank" rel="noopener noreferrer">▶ Watch video</a><a class="btn secondary" href="pdfs/HeNe_Laser_Wavelength_Transmission_Grating_Viva_QA.pdf" target="_blank" rel="noopener noreferrer">↗ Open viva PDF</a></div>
+</article>
+<article class="card" data-search="thermal conductivity of a bad conductor lee’s disc method heat transfer • conduction">
+ <div class="card-top"><span class="num">05</span><span class="tag">Heat transfer • Conduction</span></div>
+ <h3>Thermal Conductivity of a Bad Conductor</h3><div class="sub">Lee’s disc method</div>
+ <p class="desc">Determine the coefficient of thermal conductivity of a poor conductor using Lee’s disc method.</p>
+ <div class="formula">k = (mcx / AΔT) × |dT/dt|</div>
+ <div class="result">SI unit: W m⁻¹ K⁻¹</div>
+ <div class="actions"><a class="btn primary" href="https://youtu.be/iTOhdjpYgM8?si=XPFK6HZT_eUXVw46" target="_blank" rel="noopener noreferrer">▶ Watch video</a><a class="btn secondary" href="pdfs/Lees_Method_Thermal_Conductivity_Bad_Conductor_Viva_QA.pdf" target="_blank" rel="noopener noreferrer">↗ Open viva PDF</a></div>
+</article>
+<article class="card" data-search="bar pendulum compound pendulum oscillations • moment of inertia">
+ <div class="card-top"><span class="num">06</span><span class="tag">Oscillations • Moment of inertia</span></div>
+ <h3>Bar Pendulum</h3><div class="sub">Compound pendulum</div>
+ <p class="desc">Study the time period of a bar pendulum and determine g, centre of gravity and radius of gyration.</p>
+ <div class="formula">T = 2π √[(k² + h²) / gh]</div>
+ <div class="result">g = 4π²L / T²</div>
+ <div class="actions"><a class="btn primary" href="https://youtu.be/Ka6JiDblgas?si=TpREgyWlOCtvGmyP" target="_blank" rel="noopener noreferrer">▶ Watch video</a><a class="btn secondary" href="pdfs/Compound_Pendulum_Lees_Bar_Viva_QA.pdf" target="_blank" rel="noopener noreferrer">↗ Open viva PDF</a></div>
+</article>
+<article class="card" data-search="compressibility of a liquid acoustic grating using ultrasonic waves ultrasonics • acoustic grating">
+ <div class="card-top"><span class="num">07</span><span class="tag">Ultrasonics • Acoustic grating</span></div>
+ <h3>Compressibility of a Liquid</h3><div class="sub">Acoustic grating using ultrasonic waves</div>
+ <p class="desc">Find the velocity of ultrasound in a liquid and calculate its compressibility using acoustic grating.</p>
+ <div class="formula">v = fΛ   •   β = 1 / (ρv²)</div>
+ <div class="result">Bulk modulus K = ρv²</div>
+ <div class="actions"><a class="btn primary" href="https://youtu.be/ErLw1H2P-fo?si=b3CbU0CFwZRp2Xh7" target="_blank" rel="noopener noreferrer">▶ Watch video</a><a class="btn secondary" href="https://drive.google.com/file/d/1Tby_fibzchBKbpYEThjUVUjfoGBZ5zvR/view?usp=drive_link" target="_blank" rel="noopener noreferrer">↗ Open Drive PDF</a></div>
+</article>
+</div><div class="empty" id="empty">No experiment found. Try another keyword.</div>
+</section>
+<footer><span><span class="footbrand">EP Practicals</span> · Made for easy practical revision</span><span>Keep learning. Keep experimenting.</span></footer>
+</div>
+<script>
+const search = document.getElementById('search');
+const cards = [...document.querySelectorAll('.card')];
+const empty = document.getElementById('empty');
+search.addEventListener('input', () => {
+  const q = search.value.trim().toLowerCase();
+  let shown = 0;
+  cards.forEach(card => {
+    const match = card.dataset.search.includes(q);
+    card.style.display = match ? '' : 'none';
+    if (match) shown++;
+  });
+  empty.style.display = shown ? 'none' : 'block';
+});
+</script>
+</body></html>
